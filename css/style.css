@@ -1,0 +1,19 @@
+.hidden {
+   visibility: hidden;
+}
+
+.row-1 {
+   background-color: grey;
+   outline: double;
+   margin-bottom: 20px;
+   height: 200px;
+   outline-color: black;
+}
+
+.row-2 {
+   background-color: grey;
+   height: 200px;
+   margin-bottom: 20px;
+   outline: double;
+   outline-color: black;
+}
