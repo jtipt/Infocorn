@@ -62,6 +62,8 @@ function getMovie() {
                   <h5>${c.name}</h5>
           `;
          });
+
+         //Each movie on movie.html html is here add classes here to do css thingy
          let output = `
          <div class = "row">
             <div class = "col md-4">
@@ -96,6 +98,7 @@ function getMovie() {
          </div>
          `;
 
+         //^ all this is sent to movie.html in #movie div
          $("#movie").html(output);
       })
       .catch(function (error) {});
