@@ -100,6 +100,7 @@ function getMovie() {
 
          //^ all this is sent to movie.html in #movie div
          $("#movie").html(output);
+         $("title").html(movie.title);
       })
       .catch(function (error) {});
 }
