@@ -18,6 +18,13 @@
 #movies img {
    width: 90%;
 }
+
+/* this is the div of each movie after search */
+#movies div {
+   margin-bottom: 20px;
+}
+
+/* inside single movie page */
 #movie {
    padding-top: 75px;
 }
@@ -25,9 +32,4 @@
 #movie img {
    width: 50%;
    padding-bottom: 50px;
-}
-
-/* this is the div of each movie after search */
-#movies div {
-   margin-bottom: 20px;
 }
