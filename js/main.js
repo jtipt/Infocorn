@@ -59,18 +59,18 @@ function getMovie() {
          let actors = "";
          $.each(cast, function (index, c) {
             actors += `
-                  <h5>${c.name}</h5>
+                 <ul style="display: inline-block; font-size:24px;padding:10px;"><li>${c.name}</li></ul>
           `;
          });
 
          //Each movie on movie.html html is here add classes here to do css thingy
          let output = `
          <div class = "row">
-            <div class = "col md-4">
-            <img src="https://image.tmdb.org/t/p/w342${movie.poster_path}" class="thumbnail">
+            <div class = "col-md-4">
+            <img src="https://image.tmdb.org/t/p/w342${movie.poster_path}" class="">
             </div>
-            <div class = "col md-8">
-               <h2>${movie.title}</h2>
+            <div class = "col-md-8">
+               <h2 class="movieHead">${movie.title}</h2>
                <ul class="list-group">
                   <li class="list-group-item"><strong>Genre: </strong> ${movie.genres[0].name}, ${movie.genres[1].name}, ${movie.genres[2].name}</li>
                   <li class="list-group-item"><strong>Released: </strong>${movie.release_date}</li>
@@ -93,7 +93,9 @@ function getMovie() {
          <div class = "row">
             <div class = "well">
                <h3>Cast</h3>
-               ${actors}
+               
+             ${actors}
+
             </div>
          </div>
          `;
@@ -103,4 +105,38 @@ function getMovie() {
          $("title").html(movie.title);
       })
       .catch(function (error) {});
+}
+
+function myFunction() {
+   var x = document.getElementById("myTopnav");
+   if (x.className === "topnav") {
+      x.className += " responsive";
+   } else {
+      x.className = "topnav";
+   }
+}
+
+var slideIndex = 0;
+showSlides();
+function showSlides() {
+   var i;
+   var slides = document.getElementsByClassName("mySlides");
+   for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+   }
+   slideIndex++;
+   if (slideIndex > slides.length) {
+      slideIndex = 1;
+   }
+   slides[slideIndex - 1].style.display = "block";
+   setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
+function scrollWin() {
+   window.scrollBy(0, 700);
+}
+
+function todo() {
+   scrollWin();
+   getMovies(searchText);
 }
