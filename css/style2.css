@@ -12,11 +12,10 @@ body {
    background-color: black;
    margin: 0;
    font-family: "Ubuntu", Arial, Helvetica, sans-serif;
+   background-color: #3c2c3e;
 }
 
 .navbar {
-   margin-top: 10px;
-   height: 80px;
    background-color: transparent;
    border: none;
    color: white;
@@ -27,20 +26,25 @@ body {
 
 .navbar-default .navbar-brand {
    color: white;
+   font-family: "Montserrat", sans-serif;
+   font-weight: 900;
+   font-size: 4rem;
 }
 .navbar-default .navbar-brand:hover {
-   color: #a4b3b6;
+   color: #bd00f7;
 }
 .navbar-default .navbar-nav > li > a {
    color: white;
+   padding-right: 35px;
+   padding-right: 35px;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:active,
 .navbar-default .navbar-nav > li > a:focus {
-   color: #c57ed3;
+   color: white;
 }
 .navbar-default .navbar-nav > li > a:visited {
-   color: #c57ed3;
+   color: white;
    text-decoration: none;
 }
 .navbar-default .navbar-nav > .active > a,
@@ -64,11 +68,6 @@ body {
    background-color: #490d40;
 }
 
-.navbar-brand {
-   font-family: "Montserrat", sans-serif;
-   font-weight: 900;
-}
-
 /* Solid class attached on scroll past first section */
 .navbar.solid {
    background-color: #ff1f00;
@@ -89,7 +88,9 @@ body {
 
 .movieHead {
    font-family: "Montserrat", sans-serif;
-   font-weight: 700;
+   font-weight: 900;
+   color: white;
+   font-size: 4rem;
 }
 
 .about {
@@ -113,8 +114,104 @@ footer {
    color: white;
 }
 
-@media (max-width: 575px) {
+@media (max-width: 990px) {
    #movie {
       text-align: center;
    }
+}
+
+.tilesWrap {
+   padding: 0;
+   margin: 50px auto;
+   list-style: none;
+   text-align: center;
+}
+.tilesWrap li {
+   color: white;
+}
+
+.tilesWrap .l {
+   display: inline-block;
+   width: 20%;
+   min-width: 50vw;
+   max-width: 60vw;
+   padding: 80px 20px 40px;
+   position: relative;
+   vertical-align: top;
+   margin: 10px;
+   font-size: 2rem;
+   min-height: 25vh;
+   background: #262a2b;
+   border: 1px solid #252727;
+   text-align: left;
+}
+
+.tilesWrap .l.l2 {
+   min-width: 70vw;
+}
+.tilesWrap .l h2 {
+   font-family: "Montserrat", sans-serif;
+   font-weight: 700;
+   font-size: 5vw;
+   margin: 0;
+   position: absolute;
+   opacity: 0.2;
+   top: 30px;
+   right: 10px;
+   transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 700px) {
+   .tilesWrap .l h2 {
+      visibility: hidden;
+   }
+}
+
+.tilesWrap .l h3 {
+   font-family: "Montserrat", sans-serif;
+   font-weight: 400;
+   font-size: 4rem;
+   color: #b7b7b7;
+   margin-bottom: 15px;
+}
+.tilesWrap .l p {
+   font-size: 16px;
+   line-height: 18px;
+   color: #b7b7b7;
+   margin-top: 5px;
+}
+.tilesWrap .l:hover h2 {
+   top: 0px;
+   opacity: 0.6;
+}
+
+.tilesWrap .l:before {
+   content: "";
+   position: absolute;
+   top: -2px;
+   left: -2px;
+   right: -2px;
+   bottom: -2px;
+   z-index: -1;
+   background: #fff;
+   transform: skew(2deg, 2deg);
+}
+.tilesWrap .l:after {
+   content: "";
+   position: absolute;
+   width: 40%;
+   height: 100%;
+   left: 0;
+   top: 0;
+   background: rgba(255, 255, 255, 0.02);
+}
+.tilesWrap .l:before {
+   background: #c9ffbf;
+   background: -webkit-linear-gradient(to right, #ffafbd, #c9ffbf);
+   background: linear-gradient(to right, #ffafbd, #c9ffbf);
+}
+
+.imdb {
+   position: relative;
+   padding-left: 25%;
 }
