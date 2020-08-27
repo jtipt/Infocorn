@@ -1,5 +1,3 @@
-/* https://image.tmdb.org/t/p/original */
-
 $("#searchForm").on("submit", function (e) {
    let searchText = $("#searchText").val();
    getMovies(searchText);
@@ -13,13 +11,13 @@ function getMovies(searchText) {
          "https://api.themoviedb.org/3/search/movie?api_key=1512aa34ca08b654cc993f8e4e2e539e&query=" +
             searchText
       )
-      //.get("http://www.omdbapi.com?s=" + searchText + "&apikey=53bfb4cb")
+
       .then(function (response) {
          console.log(response);
          let movies = response.data.results;
          let output = "";
 
-         // Everything you see after search is here
+         //after search
          $.each(movies, function (index, movie) {
             output += `
             <div class="col-xs-6 col-md-4 col-lg-3">
@@ -31,7 +29,6 @@ function getMovies(searchText) {
             `;
          });
 
-         // ^ this whole thing is passed to the #movies div inside index.html
          $("#movies").html(output);
       })
       .catch(function (error) {});
@@ -62,7 +59,6 @@ function getMovie() {
           `;
          });
 
-         //Each movie on movie.html html is here add classes here to do css thingy
          let output = `
          <div class = "row">
             <div class = "col-md-4">
@@ -109,7 +105,6 @@ function getMovie() {
          </div>
          `;
 
-         //^ all this is sent to movie.html in #movie div
          $("#movie").html(output);
          $("title").html(movie.title);
       })
