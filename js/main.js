@@ -51,6 +51,16 @@ function getMovie() {
       .then(function (response) {
          console.log(response);
          let movie = response.data;
+         let genres_len = movie.genres.length;
+         let genres = movie.genres;
+         let gen = "";
+         for (var i = 0; i < genres_len; i++) {
+            if (i == genres_len - 1) {
+               gen += genres[i].name;
+            } else {
+               gen += genres[i].name + ", ";
+            }
+         }
          let cast = response.data.credits.cast;
          let actors = "";
          $.each(cast, function (index, c) {
@@ -71,7 +81,7 @@ function getMovie() {
                      <h2>Details</h2>
                      <h3>Details</h3>
                         <ul>
-                           <li class=""><strong>Genre: </strong> ${movie.genres[0].name}, ${movie.genres[1].name}, ${movie.genres[2].name}</li>
+                           <li class=""><strong>Genre: </strong> ${gen}</li>
                            <li class=""><strong>Released: </strong>${movie.release_date}</li>
                            <li class=""><strong>Runtime (mins): </strong>${movie.runtime}</li>
                            <li class=""><strong>Rating: </strong>${movie.vote_average}</li>

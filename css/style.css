@@ -105,7 +105,7 @@ body {
 
 .top-s {
    height: 93vh;
-   background-image: url("/img/backimg3.jpg");
+   background-image: url("../img/backimg3.jpg");
    background-repeat: no-repeat;
    background-size: cover;
    width: 100%;
